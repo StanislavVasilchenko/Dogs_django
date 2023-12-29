@@ -1,0 +1,104 @@
+[
+  {
+    "model": "dogs.category",
+    "pk": 1,
+    "fields": {
+      "name": "Овчарка",
+      "description": "Большая и пушистая"
+    }
+  },
+  {
+    "model": "dogs.category",
+    "pk": 2,
+    "fields": {
+      "name": "Колли",
+      "description": "Красивая и снималась в кино"
+    }
+  },
+  {
+    "model": "dogs.category",
+    "pk": 3,
+    "fields": {
+      "name": "Кинг Чарльз Спаниель",
+      "description": "Очень милая порода и ленивая"
+    }
+  },
+  {
+    "model": "dogs.category",
+    "pk": 4,
+    "fields": {
+      "name": "Чихуахуа",
+      "description": "Концентрация силы"
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 1,
+    "fields": {
+      "name": "Пушок",
+      "category": 1,
+      "photo": "",
+      "birth_day": "2015-10-23"
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 2,
+    "fields": {
+      "name": "Лесси",
+      "category": 2,
+      "photo": "",
+      "birth_day": null
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 4,
+    "fields": {
+      "name": "Джек",
+      "category": 1,
+      "photo": "",
+      "birth_day": "2017-07-05"
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 5,
+    "fields": {
+      "name": "Джульбарс",
+      "category": 3,
+      "photo": "",
+      "birth_day": null
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 7,
+    "fields": {
+      "name": "Пухи",
+      "category": 3,
+      "photo": "",
+      "birth_day": null
+    }
+  },
+  {
+    "model": "dogs.parent",
+    "pk": 1,
+    "fields": {
+      "dog": 1,
+      "name": "Барон",
+      "category": 1,
+      "birth_day": "2010-05-05"
+    }
+  },
+  {
+    "model": "dogs.parent",
+    "pk": 2,
+    "fields": {
+      "dog": 1,
+      "name": "Звездочка",
+      "category": 1,
+      "birth_day": "2010-07-24"
+    }
+  }
+]
