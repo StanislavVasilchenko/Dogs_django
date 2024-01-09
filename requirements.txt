@@ -2,3 +2,4 @@ Django
 pillow
 ipython
 psycopg2
+python-dotenv

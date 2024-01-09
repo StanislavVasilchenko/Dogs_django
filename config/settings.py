@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+from settings import HOST, HOST_USER, HOST_PASSWORD
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -132,11 +134,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
 
-LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/users/'
 
-EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST = HOST
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'stanislav.vasilchenko@yandex.ru'
-EMAIL_HOST_PASSWORD = 'oxfkibvtyplzqeby'
+EMAIL_HOST_USER = HOST_USER
+EMAIL_HOST_PASSWORD = HOST_PASSWORD
 EMAIL_USE_SSL = True

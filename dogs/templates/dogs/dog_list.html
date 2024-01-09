@@ -2,21 +2,23 @@
 {% load my_tags %}
 {% block content %}
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    {% for object in object_list %}
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="{{ object.photo|my_media }}" alt="Card image app">
-                <div class="card-body">
-                    <p class="card-text">{{ object.name | title }}</p>
-                    <p class="card-text">{{ object.birth_day|default:'-'}}</p>
-                    <p class="card-text">{{ object.owner|default:'Без хозяина'}}</p>
-                </div>
-                <div class="card-footer">
-                    <a class="btn btn-link" href="{% url 'dogs:dog_update' object.pk %}">Изменить</a>
-                    <a class="btn btn-outline-danger" href="{% url 'dogs:dog_delete' object.pk %}">Удалить</a>
+        {% for object in object_list %}
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="{{ object.photo|my_media }}" alt="Card image app">
+                    <div class="card-body">
+                        <p class="card-text">{{ object.name | title }}</p>
+                        <p class="card-text">{{ object.birth_day|default:'-' }}</p>
+                        <p class="card-text">{{ object.owner|default:'Без хозяина' }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-link" href="{% url 'dogs:dog_update' object.pk %}">Изменить</a>
+                        {% if perms.dogs.change_owner %}
+                            <a class="btn btn-outline-danger" href="{% url 'dogs:dog_delete' object.pk %}">Удалить</a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
     </div>
 {% endblock %}

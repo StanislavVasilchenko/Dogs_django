@@ -1,0 +1,16 @@
+<div class="container">
+    <p class="float-end mb-1">
+        <a href="{% url 'dogs:index' %}">Главная</a>
+        <a href="{% url 'dogs:categories' %}">Породы</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'users:profile' %}">Профиль</a>
+            <a href="{% url 'users:logout' %}">Выход</a>
+        {% else %}
+            <a href="{% url 'users:login' %}">Вход</a>
+            <a href="{% url 'users:register' %}">Регистрация</a>
+        {% endif %}
+    </p>
+    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
+            href="/docs/5.3/getting-started/introduction/">getting started guide</a>.</p>
+</div>
