@@ -22,6 +22,9 @@ class IndexView(TemplateView):
 
 class CategoriesListView(LoginRequiredMixin, ListView):
     model = Category
+    permission_required = ('dogs.can_view_name',
+                           'dogs.can_change_description',
+                           'dogs.can_view_category')
     extra_context = {
         'title': 'Питомник - все наши породы'
     }

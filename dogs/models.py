@@ -14,6 +14,11 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Порода'
         verbose_name_plural = 'Породы'
+        permissions = [
+            ('can_view_name', 'Can view name'),
+            ('can_change_description', 'Can change description'),
+            ('can_view_category', 'Can view category')
+        ]
 
 
 class Dog(models.Model):
